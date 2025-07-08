@@ -55,7 +55,6 @@ Below is a sample screenshot of the application running in the console:
 
 ![alt text](<Screenshot (225).png>)
 
-> 📁 Place your screenshot image inside a `screenshots/` folder in the root directory of your project. You can rename the image or change the path above as needed.
 
 ---
 
