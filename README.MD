@@ -49,4 +49,15 @@ To run all tests, simply execute the `QuantumBookstoreFullTest` class.
 - Clear separation between business logic (`InventoryService`) and testing
 - Prints prefixed with `"Quantum book store"` as per requirements
 
+## 📸 Console Output
+
+Below is a sample screenshot of the application running in the console:
+
+![alt text](<Screenshot (225).png>)
+
+> 📁 Place your screenshot image inside a `screenshots/` folder in the root directory of your project. You can rename the image or change the path above as needed.
+
+---
+
+
 
