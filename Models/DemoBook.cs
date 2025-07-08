@@ -12,5 +12,10 @@ namespace QuantumBookstoreFawryChallenge.Models
             : base(iSBN, title, publishingYear, price)
         {
         }
+
+        public override void BuyBook(string ISBN, int quantity, string email, string address)
+        {
+            throw new NotImplementedException("Demo books are not for sale !");
+        }
     }
 }
