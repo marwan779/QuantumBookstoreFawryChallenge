@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace QuantumBookstoreFawryChallenge.Models
 {
-    public class PaperBook : BaseBook
+    public class EBook : BaseBook
     {
-        public int Stock {  get; set; }
-        public PaperBook(string iSBN, string title, int publishingYear, double price, int stock)
+        public string FileType { get; set; } = string.Empty;
+        public EBook(string iSBN, string title, int publishingYear, double price, string fileType)
             : base(iSBN, title, publishingYear, price)
         {
-            Stock = stock;
+            FileType = fileType;
         }
     }
 }
