@@ -26,8 +26,8 @@ namespace QuantumBookstoreFawryChallenge.Testing
             try
             {
                 double paid = inventoryService.PurchaseBook("001", 2, "user@example.com", "123 Main St");
-                
-                Console.WriteLine($"Quantum book store: Paid Amount = {paid:C}");
+
+                Console.WriteLine($"Paid Amount = {paid:C}");
             }
             catch (Exception ex)
             {
@@ -41,7 +41,9 @@ namespace QuantumBookstoreFawryChallenge.Testing
         {
             try
             {
-                inventoryService.PurchaseBook("002", 1, "ebook@example.com", "");
+                double paid = inventoryService.PurchaseBook("002", 1, "ebook@example.com", "");
+
+                Console.WriteLine($"Paid Amount = {paid:C}");
             }
             catch (Exception ex)
             {
@@ -81,6 +83,84 @@ namespace QuantumBookstoreFawryChallenge.Testing
                 Console.WriteLine($"- {book.Title} ({book.PublishingYear})");
             }
 
+
+            Console.WriteLine();
+        }
+
+        public static void TestBuyPaperBookInsufficientStock(InventoryService inventoryService)
+        {
+            try
+            {
+
+                inventoryService.PurchaseBook("001", 20, "user@example.com", "123 Main St");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
+
+            Console.WriteLine();
+        }
+
+        public static void TestBuyMultipleEBooks(InventoryService inventoryService)
+        {
+            try
+            {
+
+                inventoryService.PurchaseBook("002", 2, "user@example.com", "");
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
+            Console.WriteLine();
+        }
+
+        public static void TestBuyInvalidISBN(InventoryService inventoryService)
+        {
+            try
+            {
+
+
+                inventoryService.PurchaseBook("999", 1, "user@example.com", "some address");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
+            Console.WriteLine();
+        }
+
+        public static void TestAddAndRemoveSingleOutdatedBook(InventoryService inventoryService)
+        {
+            inventoryService.AddBook(new PaperBook("004", "Old Book", 2000, 10, 5));
+            List<BaseBook> removed = inventoryService.RemoveOutdatedBooks(10); // Assuming current year is 2025
+
+            Console.WriteLine("Removed books:");
+            foreach (var book in removed)
+            {
+                Console.WriteLine($"- {book.Title} ({book.PublishingYear})");
+            }
+
+
+            Console.WriteLine();
+        }
+
+        public static void TestBuyBooksWithSimilarTitles(InventoryService inventoryService)
+        {
+            inventoryService.AddBook(new PaperBook("005", "C# Basics Advanced", 2021, 60, 5));
+            inventoryService.AddBook(new EBook("006", "C# Basics Intro", 2023, 25, "epub"));
+
+            try
+            {
+                inventoryService.PurchaseBook("005", 1, "user@example.com", "Shipping Lane");
+                inventoryService.PurchaseBook("006", 1, "ebook@example.com", "");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
 
             Console.WriteLine();
         }

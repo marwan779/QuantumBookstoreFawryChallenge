@@ -28,7 +28,7 @@ namespace QuantumBookstoreFawryChallenge.Services
 
             foreach (BaseBook book in outdatedBooks)
             {
-                outdatedBooks.Remove(book);
+                booksInventory.Remove(book);
             }    
 
             return outdatedBooks;
