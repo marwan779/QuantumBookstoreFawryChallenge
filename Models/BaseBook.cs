@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QuantumBookstoreFawryChallenge.Models
 {
-    public class BaseBook
+    public abstract class BaseBook
     {
         public string ISBN { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
@@ -20,5 +21,7 @@ namespace QuantumBookstoreFawryChallenge.Models
             PublishingYear = publishingYear;
             Price = price;
         }
+
+        public abstract void BuyBook(string ISBN, int quantity, string email, string address);
     }
 }
