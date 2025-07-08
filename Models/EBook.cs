@@ -15,10 +15,12 @@ namespace QuantumBookstoreFawryChallenge.Models
             FileType = fileType;
         }
 
-        public override void BuyBook(string ISBN, int quantity, string email, string address)
+        public override double BuyBook(string ISBN, int quantity, string email, string address)
         {
             Console.WriteLine($"The Paid Amount: {Price:C}");
             Console.WriteLine($"Sending EBook to MailService at {email}");
+
+            return Price;
         }
     }
 }

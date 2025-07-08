@@ -22,6 +22,6 @@ namespace QuantumBookstoreFawryChallenge.Models
             Price = price;
         }
 
-        public abstract void BuyBook(string ISBN, int quantity, string email, string address);
+        public abstract double BuyBook(string ISBN, int quantity, string email, string address);
     }
 }

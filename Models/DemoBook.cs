@@ -13,7 +13,7 @@ namespace QuantumBookstoreFawryChallenge.Models
         {
         }
 
-        public override void BuyBook(string ISBN, int quantity, string email, string address)
+        public override double BuyBook(string ISBN, int quantity, string email, string address)
         {
             throw new NotImplementedException("Demo books are not for sale !");
         }

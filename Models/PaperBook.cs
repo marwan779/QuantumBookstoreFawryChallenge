@@ -15,7 +15,7 @@ namespace QuantumBookstoreFawryChallenge.Models
             Stock = stock;
         }
 
-        public override void BuyBook(string ISBN, int quantity, string email, string address)
+        public override double BuyBook(string ISBN, int quantity, string email, string address)
         {
             if (Stock == 0)
                 throw new Exception("Error: This Book Is Not Available In The Store !");
@@ -27,6 +27,8 @@ namespace QuantumBookstoreFawryChallenge.Models
 
             Console.WriteLine($"The Paid Amount: {quantity * Price}");
             Console.WriteLine($"Sending To Shipping Service At {address}");
+
+            return quantity * Price;
         }
     }
 }
