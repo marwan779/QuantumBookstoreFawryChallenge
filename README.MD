@@ -39,7 +39,7 @@ Testing is handled through the `TestCases` static class. It includes:
 - Handling outdated books
 - Edge cases like duplicate titles with different ISBNs
 
-To run all tests, simply execute the `QuantumBookstoreFullTest` class.
+To run all tests, simply execute the `TestCases` class.
 
 ---
 
