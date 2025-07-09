@@ -47,7 +47,6 @@ To run all tests, simply execute the `QuantumBookstoreFullTest` class.
 
 - **Polymorphic book handling** via `BaseBook` abstract class
 - Clear separation between business logic (`InventoryService`) and testing
-- Prints prefixed with `"Quantum book store"` as per requirements
 
 ## 📸 Console Output
 
